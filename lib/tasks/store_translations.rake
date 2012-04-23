@@ -27,11 +27,12 @@ namespace :i18n do
   task :export_translations => :environment do
     raise "'Rails' not found! Tasks can only run within a Rails application!" if !defined?(Rails)
     
-    source_dir  = Rails.root.join('config', 'locales')
-    output_dir  = Rails.root.join('tmp')
-    locales     = I18n.available_locales
-    
-    input_files = Dir[File.join(source_dir, 'en', '*.yml')]
+    source_dir     = Rails.root.join('config', 'locales')
+    output_dir     = Rails.root.join('tmp')
+    locales        = I18n.available_locales
+    default_locale = I18n.default_locale.to_s
+
+    input_files = Dir[File.join(source_dir, default_locale, '*.yml')]
     
     puts ""
     puts "  Detected locales: #{locales}"
