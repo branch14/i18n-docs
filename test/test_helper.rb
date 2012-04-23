@@ -1,6 +1,6 @@
 require 'test/unit'
 require 'fileutils'
-require 'localch-i18n'
+require File.expand_path('../../lib/i18n-docs', __FILE__)
 
 
 module TestHelper
