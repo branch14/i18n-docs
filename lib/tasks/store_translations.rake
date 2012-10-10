@@ -35,7 +35,7 @@ namespace :i18n do
     input_files = Dir[File.join(source_dir, default_locale, '*.yml')]
     
     puts ""
-    puts "  Detected locales: #{locales}"
+    puts "  Detected locales: #{locales * ', '}"
     puts "  Detected files:"
     input_files.each {|f| puts "    * #{File.basename(f)}" }
     
